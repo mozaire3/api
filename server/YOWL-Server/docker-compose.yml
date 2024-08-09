@@ -47,17 +47,6 @@ services:
                 - '-p${DB_PASSWORD}'
             retries: 3
             timeout: 5s
-    vue:
-        build:
-            context: ../../client/YOWL-client
-            dockerfile: Dockerfile
-        container_name: vue-client
-        volumes:
-            - '../:/app'
-        networks:
-            - sail
-        depends_on:
-            - laravel.test
 networks:
     sail:
         driver: bridge
